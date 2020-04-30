@@ -6,15 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.movies.loader.JSONDataReady;
 import com.example.movies.model.Movie;
 import com.example.movies.loader.JSONData;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MyListAdapter.ItemClickListener
+public class MainActivity extends AppCompatActivity implements MyListAdapter.ItemClickListener, JSONDataReady
 {
     List<Movie> topMovieList =JSONData.movieList;
+    private MyListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,14 +29,13 @@ public class MainActivity extends AppCompatActivity implements MyListAdapter.Ite
         if (topMovieList.isEmpty())
         {
             //topMovieList = JSONData.getJSON();
-            JSONData.getJSON(this);
+            JSONData.getJSON(this, this);
         }
 
         //get the recycler view
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-
         //define an adapter
-        MyListAdapter adapter = new MyListAdapter(topMovieList, this,this);
+        adapter = new MyListAdapter(topMovieList, this,this);
 
         //assign the adapter to the recycler view
         recyclerView.setAdapter(adapter);
@@ -48,5 +50,10 @@ public class MainActivity extends AppCompatActivity implements MyListAdapter.Ite
         Intent intent = new Intent(MainActivity.this,MovDetails.class);
         intent.putExtra("id", position);
         startActivity(intent);
+    }
+
+    @Override
+    public void dataIsReady() {
+        adapter.notifyDataSetChanged();
     }
 }

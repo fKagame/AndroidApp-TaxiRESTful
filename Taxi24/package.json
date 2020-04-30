@@ -1,0 +1,29 @@
+{
+  "name": "pharmadesk",
+  "version": "1.0.0",
+  "description": "Pharmaceutical web app to help pharmacy workers dispense medecines",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fKagame/PharmaDesk.git"
+  },
+  "keywords": [
+    "pharma"
+  ],
+  "author": "fkagame",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fKagame/PharmaDesk/issues"
+  },
+  "homepage": "https://github.com/fKagame/PharmaDesk#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
+    "pg": "^7.18.2"
+  }
+}

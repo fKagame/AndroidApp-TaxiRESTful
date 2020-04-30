@@ -28,7 +28,7 @@ public class JSONData
         movieList = new ArrayList<>();
     }
 
-    public static void getJSON(Context context)
+    public static void getJSON(Context context, final JSONDataReady listener)
     {
         String url = API_URL + API_KEY;
 
@@ -38,7 +38,7 @@ public class JSONData
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        parseJSON(response);
+                        parseJSON(response, listener);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -49,7 +49,7 @@ public class JSONData
         queue.add(stringRequest);
     }
 
-    private static List<Movie> parseJSON(String response)
+    private static List<Movie> parseJSON(String response, final JSONDataReady listener)
     {
         // Base url for the posters
         final String POSTER_BASE_URL = "https://image.tmdb.org/t/p/w185";
@@ -84,6 +84,7 @@ public class JSONData
                     //add movie object to our ArrayList
                     movieList.add(movie);
                 }
+                listener.dataIsReady();
             }
             catch (JSONException e)
             {

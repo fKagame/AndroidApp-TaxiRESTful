@@ -111,6 +111,20 @@
                         android:layout_marginTop="2dp"
                         android:text="overview ........."
                         android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/rate_me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:text="Rate"
+                        android:textSize="12sp"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="8" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
