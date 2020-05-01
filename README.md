@@ -21,8 +21,8 @@ Project setup
 
 API EndPoints (Json)
 -------------------
-1. GET http://localhost:3000/api/drivers: Return a list of all drivers
-2. GET http://localhost:3000/api/drivers/{id}: Return one driver, where id is passed to the request
-3. GET http://localhost:3000/api/available: Return a list of all available drivers
-4. POST http://localhost:3000/api/3km?latitude={x}&longitude={y}: Return a list of available drivers within 3km 
+1. GET  "/api/drivers": Return a list of all drivers
+2. GET  "/api/drivers/{id}": Return one driver, where id is passed to the request
+3. GET  "/api/available": Return a list of all available drivers
+4. POST "/api/nearby?latitude={x}&longitude={y}": Return a list of available drivers within 3km 
 
