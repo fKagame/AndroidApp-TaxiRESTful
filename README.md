@@ -16,6 +16,7 @@ Taxi 24:
 Project setup
 --------------
 - Clone the repo, open the project (Taxi24) with your text editor
+- import the database schema (PostgreSQL), you can use this command to import "psql -d taxi24DB -f taxi24DB.sql"
 - Start the server by running index.js (nodemon index.js)
 - Once the server is running, you can go ahead and make request to the API
 
