@@ -1,8 +1,8 @@
-# Bank-of-Kigali-Challenge
+# Movie Renting App - Taxi 24 API
  Exercise 1: Film Fan (Mobile) ▪ Exercise 2: Taxi 24 (APIs) 
  
  Attribution: All data used in this android app comes from TMDb
- Film Fan, App Name: Bk-Movies
+ Film Fan, App Name: Bk-Movies (Bank Of Kigali)
  Features:
  1. View a sorted list of movies with their titles, the release date, the vote average and the movie poster
  2. You can select and view details of any movie
